@@ -32,3 +32,4 @@ jobs:
 
     - name: Wind down
       run: docker-compose down
+      working-directory: ./app
