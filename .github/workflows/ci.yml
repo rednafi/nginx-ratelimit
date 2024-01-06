@@ -17,14 +17,14 @@ jobs:
 
     - name: Run tests
       run: go test ./...
-      working_directory: ./app
+      working-directory: ./app
 
     - name: Set up docker
       uses: docker/setup-buildx-action@v1
 
     - name: Spin up containers
       run: docker-compose up -d
-      working_directory: ./app
+      working-directory: ./app
 
     - name: Test service
       run: |
