@@ -23,7 +23,7 @@ $ git clone git@github.com:rednafi/nginx-ratelimit
     $ seq 200 | xargs -n 1 -P 100 bash -c 'curl -s 34.138.11.32/greetings|jq'
     ```
 
-This returns:
+    This returns:
 
     ```txt
     {
