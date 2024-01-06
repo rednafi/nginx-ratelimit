@@ -20,7 +20,7 @@ $ git clone git@github.com:rednafi/nginx-ratelimit
 -   Test the rate limiting by sending many requests:
 
     ```sh
-    $ seq 200 | xargs -n 1 -P 100 bash -c 'curl -s 34.138.11.32/greetings|jq'
+    $ seq 200 | xargs -n 1 -P 100 bash -c 'curl -s localhost/greetings|jq'
     ```
 
     This returns:
