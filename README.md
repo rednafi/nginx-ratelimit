@@ -1,7 +1,8 @@
 # nginx-ratelimit
 
-A simple hello-world JSON API service that incorporates rate limiting via Nginx. It allows
-50 req/sec and return 429 error when the limit is exceeded.
+
+A simple hello-world JSON API service incorporates rate limiting via Nginx. It allows 
+50 requests per second and returns a 429 error when the limit is exceeded.
 
 See the blog post [here].
 
