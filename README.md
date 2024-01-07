@@ -28,7 +28,7 @@ $ git clone git@github.com:rednafi/nginx-ratelimit
 
     This returns:
 
-    ```txt
+    ```json
     {
         "message": "Hello World"
     }
