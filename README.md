@@ -1,7 +1,9 @@
 # nginx-ratelimit
 
-Rate limiting through reverse proxy. Allow 50 req/sec and return 429 error when the limit
-is exceeded.
+A simple hello-world JSON API service that incorporates rate limiting via Nginx. It allows
+50 req/sec and return 429 error when the limit is exceeded.
+
+See the blog post [here].
 
 ## Installation
 
@@ -32,9 +34,7 @@ $ git clone git@github.com:rednafi/nginx-ratelimit
     {
         "message": "Hello World"
     }
-
     ...
-
     {
         "status": 429,
         "message": "Too Many Requests"
@@ -51,3 +51,6 @@ $ git clone git@github.com:rednafi/nginx-ratelimit
         "message": "Too Many Requests"
     }
     ```
+
+
+[here]: https://rednafi.com/go/rate_limiting_via_nginx

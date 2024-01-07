@@ -7,29 +7,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Check out code
-      uses: actions/checkout@v2
+      - name: Check out code
+        uses: actions/checkout@v2
 
-    - name: Set up Go
-      uses: actions/setup-go@v2
-      with:
-        go-version: '^1.20' # Use the specific version of Go
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: "^1.20" # Use the specific version of Go
 
-    - name: Run tests
-      run: go test ./...
-      working-directory: ./app
+      - name: Run tests
+        run: go test ./...
+        working-directory: ./app
 
-    - name: Set up docker
-      uses: docker/setup-buildx-action@v1
+      - name: Set up docker
+        uses: docker/setup-buildx-action@v1
 
-    - name: Spin up containers
-      run: docker-compose up -d
-      working-directory: ./app
+      - name: Spin up containers
+        run: docker-compose up -d
+        working-directory: ./app
 
-    - name: Test service
-      run: |
-        seq 200 | xargs -n 1 -P 100 bash -c 'curl -s localhost/greetings|jq' | grep 429
+      - name: Test service
+        run: |
+          seq 200 | xargs -n 1 -P 100 bash -c 'curl -s localhost/greetings|jq' | grep 429
 
-    - name: Wind down
-      run: docker-compose down
-      working-directory: ./app
+      - name: Wind down
+        run: docker-compose down
+        working-directory: ./app
